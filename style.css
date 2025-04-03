@@ -1,0 +1,281 @@
+@import url("https://fonts.google.com");
+
+*{
+margin: 0px;
+padding: 0px;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+box-sizing: border-box;
+}
+
+
+ html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+ }
+
+ body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(to right,rgb(232, 229, 235) ,rgb(140, 101, 247));
+}
+
+nav{
+    width: 100%;
+    height: 10vh;
+     position: fixed;
+      top: 0%;
+      left: 0%;
+      background-color: aliceblue;
+      z-index: 99;
+}
+.nav-container{
+    margin: auto;
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: .3s;
+    
+}
+
+.logo span{
+    color: rgb(132, 60, 226);
+    text-shadow: 0 0 10px rgba(64, 3, 179, 0.836);
+}
+.hamburg,.cancel{
+    cursor:pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none;
+}
+
+nav .checkbox{
+    display: none;
+}
+
+nav input{
+    display: none;
+}
+
+nav .checkbox i{
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    transition: left 0.3s;
+}
+
+ul li a{
+    padding: 1rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(33, 1, 63);
+    transition: 0.3s;
+}
+
+ul li a:hover{
+    border-top-color: black;
+    border-bottom-color: black;
+    color: rgb(71, 6, 71);
+}
+
+@media (width < 750px){
+    nav .checkbox{display: block;
+    }
+
+    ul{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 85px);
+        left: -100%;
+        top: 85px;
+        background-color: blueviolet;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    nav #check:checked ~ ul{
+        left:0;
+    }
+
+    ul li a{
+        font-size: 1.25rem;
+    }
+}
+
+.section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section .image{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .image img{
+    width: 80%;
+    mix-blend-mode: multiply;
+    border-radius: 90%;
+}
+
+.section .content{
+    color: black;
+    width: 40%;
+    min-height: 10px;
+}
+
+.content h1{
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+    font-weight: 600;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+}
+
+.content h1 span{
+    color: rgb(106, 20, 163);
+    text-shadow: 0 0 10px rgb(118, 53, 204);
+}
+
+.content .typewriter{
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+    line-height: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.content .typewriter span{
+    color: rgb(106, 20, 163);
+    font-size: 2rem;
+    text-shadow: 0 0 5px  rgb(118, 53, 204);
+    position: relative;
+    transition: 0.3s linear;
+}
+
+.typewriter span::after{
+    
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 200%;
+    border-left: 3px solid black;
+    }
+
+.content p{
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+    font-weight: 400;
+}
+
+.social-links i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color:transparent;
+    border: 0.2rem solid rgb(69, 4, 145);
+    border-radius: 50%;
+    color:rgb(89, 18, 156);
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+
+.social-links i:hover{
+    scale: 1.3;
+    color: white;
+    background-color: rgb(106, 40, 194);
+    filter: drop-shadow(0 0 10px rgb(163, 33, 214));
+cursor: pointer;
+}
+
+.content button{
+    width: 40%;
+    height: 6vh;
+    margin: 30px;
+    background-color: rgb(122, 20, 206);
+    color: rgb(3, 1, 1);
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 900;
+    border-radius: 10px;
+    transition: 0.2s linear;
+}
+
+.content button:hover{
+ scale: 1.1;
+ color: rgb(64, 6, 102);
+ border: 2px solid rgb(76, 5, 141);
+ background-color: transparent;
+ font-weight: 700;
+ box-shadow: 0 0 40px rgb(85, 3, 179);
+}
+
+@media (max-width:884px) {
+    body{
+        overflow-y: visible;
+    }
+
+    nav .logo{
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+
+    .section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hamburg, .cancel{
+        display: block;
+    }
+
+    .section .content{
+        width: 80%;
+    }
+
+    .social-links i{
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    
+    .section .image{
+        width: 80%;
+        margin-bottom: 0px;
+    }
+}
+
+
+
+
+
